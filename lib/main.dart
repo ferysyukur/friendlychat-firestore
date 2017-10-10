@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_firestore/firebase_firestore.dart';
+import 'package:firebase_firestore/src/utils/push_id_generator.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -39,6 +40,8 @@ class _MyAppState extends State<MyApp> {
 
   bool _isComposing = false;
 
+  String id_message = PushIdGenerator.generatePushChildName();
+
   Future<Null> _handleSubmitted(String text) async{
 
     _textController.clear();
@@ -53,7 +56,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _sendMessage({String text, String imageUrl}) {
-    collection.document().setData({
+    collection.document(id_message).setData({
+      'id': id_message,
       'senderImage': googleSignIn.currentUser.photoUrl,
       'sender': googleSignIn.currentUser.displayName,
       'text': text,

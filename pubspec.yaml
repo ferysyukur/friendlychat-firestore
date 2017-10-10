@@ -7,21 +7,13 @@ dependencies:
   image_picker: 0.1.1
   firebase_firestore: 0.0.1+1
   google_sign_in:
-        git:
-          url: https://github.com/ferysyukur/plugins.git
-          path: packages/google_sign_in
+    path: plugins/packages/google_sign_in
   firebase_analytics:
-      git:
-        url: https://github.com/ferysyukur/plugins.git
-        path: packages/firebase_analytics
+    path: plugins/packages/firebase_analytics
   firebase_storage:
-    git:
-      url: https://github.com/ferysyukur/plugins.git
-      path: packages/firebase_storage
+    path: plugins/packages/firebase_storage
   firebase_auth:
-      git:
-        url: https://github.com/ferysyukur/plugins.git
-        path: packages/firebase_auth
+    path: plugins/packages/firebase_auth
 
 dev_dependencies:
   flutter_test:

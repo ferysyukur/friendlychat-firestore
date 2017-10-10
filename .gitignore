@@ -8,4 +8,4 @@ ios/.generated/
 packages
 pubspec.lock
 .flutter-plugins
-.plugins
+plugins
